@@ -16,7 +16,8 @@ function solcjs(_version) {
       
       console.time('[fetch compiler]');
       let url = await solcVersion.version2url(version);
-      let compilersource = await getCompilersource(url);
+      const cors_api_host = 'https://cors-anywhere.herokuapp.com/';
+      let compilersource = await getCompilersource(cors_api_host + url);
       console.timeEnd('[fetch compiler]');
 
       console.time('[load compiler]');
